@@ -1,0 +1,115 @@
+{
+  "name": "single-file-lab-studio",
+  "displayName": "Single-File Lab Studio",
+  "description": "Generate self-contained HTML/CSS/JS single-file apps with live preview, preset management, and one-click publish-readiness.",
+  "version": "1.0.0",
+  "publisher": "kai99",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "keywords": [
+    "html",
+    "single-file",
+    "generator",
+    "lab",
+    "prototype"
+  ],
+  "icon": "icon.png",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "lab-studio",
+          "title": "Lab Studio",
+          "icon": "media/sidebar-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "lab-studio": [
+        {
+          "type": "webview",
+          "id": "labSidebar",
+          "name": "Lab Explorer",
+          "contextualTitle": "Lab Studio",
+          "icon": "media/sidebar-icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "lab.newApp",
+        "title": "Lab: New Single-File App",
+        "category": "Lab Studio"
+      },
+      {
+        "command": "lab.importSpec",
+        "title": "Lab: Import Spec",
+        "category": "Lab Studio"
+      },
+      {
+        "command": "lab.preview",
+        "title": "Lab: Live Preview",
+        "category": "Lab Studio"
+      },
+      {
+        "command": "lab.publishReady",
+        "title": "Lab: Publish Ready",
+        "category": "Lab Studio"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "lab.preview",
+          "when": "resourceExtname == .html",
+          "group": "lab@1"
+        },
+        {
+          "command": "lab.publishReady",
+          "when": "resourceExtname == .html",
+          "group": "lab@2"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "lab.preview",
+          "when": "resourceExtname == .html",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "lab.newApp",
+        "key": "ctrl+shift+l n",
+        "mac": "cmd+shift+l n"
+      },
+      {
+        "command": "lab.preview",
+        "key": "ctrl+shift+l p",
+        "mac": "cmd+shift+l p",
+        "when": "resourceExtname == .html"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}

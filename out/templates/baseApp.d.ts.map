@@ -1,0 +1,1 @@
+{"version":3,"file":"baseApp.d.ts","sourceRoot":"","sources":["../../src/templates/baseApp.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,MAAM,WAAW,UAAU;IACvB,KAAK,EAAE,MAAM,CAAC;IACd,oBAAoB,EAAE,OAAO,CAAC;IAC9B,oBAAoB,EAAE,OAAO,CAAC;IAC9B,SAAS,EAAE,OAAO,CAAC;CACtB;AAED,wBAAgB,eAAe,CAAC,OAAO,EAAE,UAAU,GAAG,MAAM,CA0E3D"}
